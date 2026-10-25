@@ -18,13 +18,18 @@
 
 ## 📌 Overview
 
-File Carving Tool
+OCarve is a file-carving suite that recovers embedded files from binaries, disk images, memory dumps and network captures. It streams data in chunks with mmap to carve files larger than RAM, deduplicates recovered objects by SHA-256 and parses GPT partition tables and EXT2/3/4 superblocks. Deep validators for PE and ELF, archive integrity checks and metadata extraction improve carving accuracy, with HTML reporting and a configurable output directory.
 
 ---
 
 ## ✨ Features
 
-- OCarve v2.0 - Signature-based file carving from disk images, memory dumps and binary streams
+- Carves JPEG/PNG/PDF/ZIP/EXE/ELF/Office/video/audio from many source types
+- Chunked streaming via mmap to carve files larger than RAM
+- SHA-256 deduplication to skip identical carved files
+- GPT partition table and EXT2/3/4 superblock detection
+- Encrypted-volume (LUKS/VeraCrypt/BitLocker) detection and PE/ELF deep validation
+- Metadata extraction, extended IOC patterns and HTML report export
 
 ---
 
@@ -39,6 +44,8 @@ File Carving Tool
 
 ```bash
 ./OCarve
+./OCarve -o ./carved/
+./OCarve --help
 ```
 
 ---
